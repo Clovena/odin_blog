@@ -2,9 +2,17 @@
 <p><%= @article.body %></p>
 
 <div>
+  <%= link_to "Back to all Articles", root_path %>
+</div>
+
+<div>
   <%= link_to "Edit this Article...", edit_article_path(@article) %>
 </div>
 
 <div>
-  <%= link_to "Back to all Articles", root_path %>
+  <%= link_to "Delete this Article...", article_path(@article),
+    data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
 </div>

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # For the purposes of incremental training, these were included.
   # However, further along in the exercise, they were replaced by the below.
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

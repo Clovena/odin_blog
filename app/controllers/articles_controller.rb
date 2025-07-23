@@ -20,4 +20,10 @@ class ArticlesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def article_params
+    params.expect(article: [ :title, :body ])
+  end
 end

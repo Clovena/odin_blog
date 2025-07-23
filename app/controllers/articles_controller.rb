@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   ### Destroy
-  #
+
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
